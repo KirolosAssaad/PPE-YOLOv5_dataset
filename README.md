@@ -3,9 +3,9 @@ This repo takes [this dataset](https://www.kaggle.com/datasets/andrewmvd/hard-ha
 
 ## How to use
 1. Clone this repo
-2. Use the (yolofy.py)[yolofy.py] script to take the original dataset and convert it to the YOLOv5 format. 
+2. Use the [yolofy.py](yolofy.py) script to take the original dataset and convert it to the YOLOv5 format. 
 3. Use the split.py script to split the dataset into train, test and validate sets.
-4. Use the (ppeConfig.yaml)[ppeConfig.yaml] file to train the model.
+4. Use the [ppeConfig.yaml](ppeConfig.yaml) file to train the model.
 
 Data split into train, test and validate sets. The split is 70% train, 20% test and 10% validate.
 

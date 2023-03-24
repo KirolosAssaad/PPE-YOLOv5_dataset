@@ -3,4 +3,7 @@ test: ../datasets/restructuredDataset/test
 val: ../datasets/restructuredDataset/val
 
 nc: 3
-names: ['helmet', 'head', 'person']
+names: 
+  0: 'helmet'
+  1: 'head'
+  2: 'person'
