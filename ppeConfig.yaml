@@ -1,0 +1,6 @@
+train: ../datasets/restructuredDataset/train
+test: ../datasets/restructuredDataset/test
+val: ../datasets/restructuredDataset/val
+
+nc: 3
+names: ['helmet', 'head', 'person']
