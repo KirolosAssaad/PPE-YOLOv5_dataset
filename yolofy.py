@@ -1,16 +1,17 @@
 import bs4 as bs
 import glob
 
-labelsDict = {
-    'helmet': 0,
-    'head': 1,
-    'person': 2
-}
-
+# labelsDict = {
+#     'helmet': 0,
+#     'head': 1,
+#     'person': 2
+# }
+labels = ['helmet', 'head', 'person']
 
 def yolofy(xml):
     soup = bs.BeautifulSoup(xml, 'xml')
     objects = []
+    name = ''
     fileName = soup.find('filename').text
 
     # replace the extension if jpg or jpeg or png
@@ -22,7 +23,13 @@ def yolofy(xml):
     width = int(soup.find('width').text)
     height = int(soup.find('height').text)
     for tag in soup.find_all('object'):
-        name = labelsDict[tag.find('name').text]
+        # check if the object is in the labelsDict
+        if tag.find('name').text not in labels:
+            print("Found an object that is not in the labelsDict: " + tag.find('name').text+ " in file: " + fileName)
+            continue
+        else:
+            # get index of the label
+            name = labels.index(tag.find('name').text)
         # Get the bounding box
         bndbox = tag.find('bndbox')
         xmin = int(bndbox.find('xmin').text)
@@ -51,6 +58,7 @@ def yolofy(xml):
     string = ''
 
     if (len(objects) == 0):
+        print("No objects found in file: " + fileName)
         return
     for obj in objects:
         string += ' '.join([str(a) for a in obj])

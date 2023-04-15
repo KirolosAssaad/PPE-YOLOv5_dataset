@@ -12,7 +12,7 @@ ORIG_INPUT_DATASET = "images"
 
 # set the base path to the new directory that will contain
 # our images after computing the training and testing split
-BASE_PATH = "NewDataset"
+BASE_PATH = "restructuredDataset"
 
 # define the names of the training, testing, and validation
 # directories
